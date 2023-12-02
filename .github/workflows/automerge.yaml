@@ -27,7 +27,7 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ""
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       MERGE_LABELS: "automerge,!work in progress"
       MERGE_REMOVE_LABELS: "automerge"
       MERGE_COMMIT_MESSAGE: "pull-request-description"
@@ -46,5 +46,4 @@ jobs:
           labels: automerge
  
       - id: automerge
-        name: automerge
         uses: "pascalgn/automerge-action@v0.15.6"
